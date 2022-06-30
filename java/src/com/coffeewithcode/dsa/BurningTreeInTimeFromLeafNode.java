@@ -5,11 +5,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Queue;
 
+import com.coffeewithcode.dsa.PrintBurningTreeInOrder.Node;
+
 // Java program to find minimum time required
 // to burn the binary tree completely
 
+
 public class BurningTreeInTimeFromLeafNode {
 
+	
 	static Map<Node,Node> parent=new HashMap<>();
     public static Node createMapping(Node root,int target){
         Node targetNode=null;
@@ -20,7 +24,7 @@ public class BurningTreeInTimeFromLeafNode {
             int n=q.size();
             for(int i=0;i<n;i++){
                 Node temp=q.remove();
-                if(temp.data==target){
+                if(temp.val==target){
                     targetNode=temp;
                 }
                 if(temp.left!=null){
