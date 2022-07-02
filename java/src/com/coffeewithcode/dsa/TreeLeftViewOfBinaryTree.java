@@ -5,7 +5,7 @@ import java.util.List;
 
 
 
-public class LeftViewOfBinaryTree {
+public class TreeLeftViewOfBinaryTree {
 	static class Node
 	{
 		int data;

@@ -11,7 +11,7 @@ import com.coffeewithcode.dsa.PrintBurningTreeInOrder.Node;
 // to burn the binary tree completely
 
 
-public class BurningTreeInTimeFromLeafNode {
+public class TreeBurningTreeInTimeFromLeafNode {
 
 	
 	static Map<Node,Node> parent=new HashMap<>();
