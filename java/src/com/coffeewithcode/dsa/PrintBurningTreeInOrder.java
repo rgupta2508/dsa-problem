@@ -59,7 +59,6 @@ public class PrintBurningTreeInOrder {
 		System.out.println();
 		}
 	private static void burnTree(Node root, Node target) {
-			List<Integer> res = new ArrayList<Integer> ();
 			if (root == null )
 			return ;
 			buildMap(root, null);
