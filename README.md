@@ -1,5 +1,4 @@
 # dsa-problem
 
-GeeksforGeeks
-Java solutions  from GeeksForGeeks DSA problems website:- https://www.geeksforgeeks.org/
+Java solutions from GeeksForGeeks and leetcode DSA problems website:- https://www.geeksforgeeks.org/ , https://www.geeksforgeeks.org/
 Practice here:- https://practice.geeksforgeeks.org/
