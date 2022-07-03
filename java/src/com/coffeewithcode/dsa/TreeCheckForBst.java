@@ -17,7 +17,7 @@ class Node
 	}
 }
 
-public class CheckForBst
+public class TreeCheckForBst
 {
 	//Root of the Binary Tree
 	Node root;
@@ -54,7 +54,7 @@ public class CheckForBst
 	/* Driver program to test above functions */
 	public static void main(String args[])
 	{
-		CheckForBst tree = new CheckForBst();
+		TreeCheckForBst tree = new TreeCheckForBst();
 		tree.root = new Node(4);
 		tree.root.left = new Node(2);
 		tree.root.right = new Node(5);
