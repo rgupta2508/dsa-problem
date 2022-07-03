@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class TreeLevelOrderTraversal {
+public class TreeMirrorTree {
+
 	static class Node {
 		int data;
 		Node left, right;
@@ -21,18 +22,34 @@ public class TreeLevelOrderTraversal {
 		tree.right = new Node(30);
 		tree.left.left = new Node(40);
 		tree.left.right = new Node(60);
-		
-	
-		
-		
-
-		ArrayList<Integer> result = findSpiral(tree);
-		for (int i : result) {
+		// 10
+		// / \
+		// 20 30
+		// / \
+		// 40 60
+		//
+		Node result = getTreeMirrorTree(tree);
+		ArrayList<Integer> list = levelOrder(result);
+		for (int i : list) {
 			System.out.println(i);
 		}
 	}
 
-	public static ArrayList<Integer> findSpiral(Node root) {
+	public static Node getTreeMirrorTree(Node root) {
+		if (root == null) {
+			return root;
+		} else {
+			Node temp = root.left;
+			root.left = root.right;
+			root.right = temp;
+		}
+		getTreeMirrorTree(root.left);
+		getTreeMirrorTree(root.right);
+		return root;
+
+	}
+
+	public static ArrayList<Integer> levelOrder(Node root) {
 		// Your code here
 		ArrayList<Integer> result = new ArrayList<>();
 		if (root == null)
@@ -50,6 +67,6 @@ public class TreeLevelOrderTraversal {
 			}
 		}
 		return result;
-		}
+	}
 
 }
