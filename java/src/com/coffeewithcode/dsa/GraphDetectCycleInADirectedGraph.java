@@ -1,6 +1,8 @@
 package com.coffeewithcode.dsa;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class GraphDetectCycleInADirectedGraph {
 	static ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
@@ -30,41 +32,30 @@ public class GraphDetectCycleInADirectedGraph {
 
 		// adj.get(3).add(3);
 
-		System.out.println(isCyclic(7, adj));
+		ArrayList<Integer> list=bfsOfGraph(7, adj);
+		for(Integer i:list) {
+			System.out.println(i);
+		}
 
 	}
 
-	public static boolean isCyclic(int V, ArrayList<ArrayList<Integer>> adj) {
-		// add your code here
-		
-	        int [] vis=new int[V];
-	        int [] disvis=new int[V];
-	        
-	        for(int i=0;i<V;i++)
-	        {
-	           if(vis[i]==0)
-	           {
-	               if(dfs(adj,vis,disvis,i)==true)
-	               return true;
-	           }
-	        }
-	        return false;
-	}
-
-	public static boolean dfs(ArrayList<ArrayList<Integer>> adj,int[] vis,int [] disvis,int s) {
-        vis[s]=1;
-        disvis[s]=1;
-        
-        for(int it:adj.get(s))
-        {
-            if(vis[it]==0)
-            {
-                if(dfs(adj,vis,disvis,it)==true) return true;
+	public static ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
+        // Code here
+		ArrayList <Integer> a= new ArrayList <Integer> ();
+        boolean [] v = new boolean [V];
+        Queue <Integer> q= new LinkedList <Integer>();
+        q.add(0);
+        while(q.size()!=0 ){
+            int u = q.poll();
+            if(v[u]) continue;
+            v[u]= true;
+            a.add(u);
+            for(int k: adj.get(u)){
+                q.add(k);
             }
-             else if(disvis[it]==1) return true;
         }
-            disvis[s]=0;
-            return false;
+        return a ;
     }
+   
 
 }
