@@ -2,8 +2,6 @@
 
 package com.coffeewithcode.dsa.gfg;
 
-import java.math.BigInteger;
-
 public class MultiplyTwoStrings {
 	public static void main(String[] args) {
 		MultiplyTwoStrings a = new MultiplyTwoStrings();
@@ -46,7 +44,7 @@ public class MultiplyTwoStrings {
 			// To shift position to left after every
 			// multipliccharAtion of a digit in num2
 			iN2 = 0;
-			System.out.println("===");
+			//System.out.println("######");
 
 			// Go from right to left in num2
 			for (int j = len2 - 1; j >= 0; j--) {
@@ -57,12 +55,14 @@ public class MultiplyTwoStrings {
 				// and add result to previously stored result
 				// charAt current position.
 				int sum = n1 * n2 + result[iN1 + iN2] + carry;
-				System.out.println(sum);
+				//System.out.println(sum);
 
 				// Carry for next itercharAtion
 				carry = sum / 10;
 
 				// Store result
+				//System.out.println(iN1 + iN2+"======");
+
 				result[iN1 + iN2] = sum % 10;
 
 				iN2++;
