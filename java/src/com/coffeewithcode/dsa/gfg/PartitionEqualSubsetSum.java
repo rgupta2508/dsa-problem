@@ -3,14 +3,23 @@ package com.coffeewithcode.dsa.gfg;
 public class PartitionEqualSubsetSum {
 	public static void main(String[] args) {
 		int n = 11;
-		int arr[] = { 1, 5, 11, 5,2 };
+		int arr[] = { 1, 5, 11, 5,4 };
 		PartitionEqualSubsetSum a = new PartitionEqualSubsetSum();
 		System.out.println(a.equalPartitionDP(n, arr));
 	}
 
 	// using DP
-	 int equalPartitionDP(int sum,int elements[])
+	 int equalPartitionDP(int x,int elements[])
     {
+		 int sum = 0;
+			for (int i : elements) {
+				sum = sum + i;
+			}
+			if (sum % 2 == 1) {
+				return -1;
+			}
+			sum= sum/2;
+			
         int dp[] = new int[sum + 1];
         // initializing with 1 as sum 0 is always possible
         dp[0] = 1;
@@ -20,6 +29,9 @@ public class PartitionEqualSubsetSum {
             // to change the values of all possible sum
             // values to 1
             for (int j = sum; j >= elements[i]; j--) {
+            	//if((j + elements[i])==sum) {
+            	//	return 1;
+            	//}
                 if (dp[j - elements[i]] == 1)
                     dp[j] = 1;
             }
