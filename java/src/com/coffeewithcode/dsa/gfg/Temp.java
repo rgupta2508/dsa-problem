@@ -5,7 +5,34 @@ import java.util.Map;
 import java.util.Stack;
 
 public class Temp {
+	public static boolean isBadVersion(int version) {
+        if(version >= 2) {
+            return true;
+        }
+        else {
+            return false;
+        }       
+    }
 	public static void main(String[] args) {
+		int v=9;
+        int l=1;
+        int h=v;
+        int mid=-1;
+        int ans=-1;
+        for( l=1,h=v;l<=h;){
+          mid=(l+h)/2;
+          if(isBadVersion(mid)==true){
+        	  ans=mid;
+              h=mid-1;
+           }
+           else{
+             l=mid+1;   
+           }
+        }
+        System.out.println("first bad versio =="+ans);
+        
+      
+		
 
 		System.out.println("########Replace all 0's with 5 #####");
 
