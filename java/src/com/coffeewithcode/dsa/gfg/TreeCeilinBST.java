@@ -19,7 +19,7 @@ public class TreeCeilinBST {
 		root.left.left = new Node(4);
 		root.left.right = new Node(7);
 		root.left.right.right = new Node(8);
-		TreeCeilinBST a = new TreeCeilinBST();
+TreeCeilinBST a = new TreeCeilinBST();	
 		System.out.println(a.findCeil(root, 6));
 	}
 
