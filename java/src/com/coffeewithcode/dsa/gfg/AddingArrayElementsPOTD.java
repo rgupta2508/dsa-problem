@@ -12,6 +12,7 @@ public class AddingArrayElementsPOTD {
 	public static int minOperations(int[] arr, int n, int k) {
 		// code here
 		int cnt = 0;
+		
 		PriorityQueue<Integer> pq = new PriorityQueue<>();
 		for (int i : arr) {
 			pq.add(i);
