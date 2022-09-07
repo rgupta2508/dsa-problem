@@ -1,10 +1,12 @@
-package com.coffeewithcode.dsa.gfg;
+package com.temp;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.Stack;
 
-public class Temp {
+public class TempTest {
 	public static boolean isBadVersion(int version) {
         if(version >= 2) {
             return true;
@@ -13,7 +15,13 @@ public class Temp {
             return false;
         }       
     }
+	
+	
+	
 	public static void main(String[] args) {
+		
+		Set<String> set = new HashSet<String>();
+	
 		int v=9;
         int l=1;
         int h=v;
